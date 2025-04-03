@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Blog categories {% endblock %}
+{% block css_imports %}
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid g-0">
+    <div class="row g-0">
+        <div class="col-12 col-md-2 g-0" style="background-color: yellow;">
+            {% include 'includes/dashboard_sidebar.html' %}
+        </div>
+
+        <!--begin about-->
+        <div class="col-12 col-md-10 mt-5 mt-md-3 ps-5 text-center g-0">
+            
+            <!--intro-->
+            <h2>Blog categories</h2>
+            <hr>
+
+            <!--categories-->
+            <div class="row">
+                {% for category in categories %}
+                    <div class="col-12 col-md-6 mb-md-5">
+                        <h3>{{category.name}}</h3>
+                        <a href="{% url 'posts_by_category' chosen_category=forloop.counter %}"><img class="img-fluid" src="{{category.image.url}}" style="width:200px;"></a>
+                    </div>
+                {% endfor %}
+
+            </div>
+            <!--/categories-->
+
+        </div>
+        <!-- end about-->
+
+    </div>
+</div>
+
+{% endblock content %}
+
+

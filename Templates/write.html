@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}New Post{% endblock %}
+
+  {% block content %}
+<div class="container-fluid g-0">
+    <div class="row g-0">
+
+  <div class="col-12 col-md-2 " style="background: yellow;">
+      {% include 'includes/dashboard_sidebar.html' %}
+  </div>
+
+	<div class="col-12 col-md-10">
+               
+      <form class="bg-danger rounded ps-2  pb-3 pt-3" action="{% url 'write' %}" method="post" enctype="multipart/form-data" >
+      {% csrf_token %}
+		  <div class="row text-center g-0">
+			<div class="col-12 col-md-9">
+        <p class="text-warning">Post title:</p>
+			  <div class="row ms-2 me-2 ms-md-auto me-md-auto text-warning g-0">
+			   {{form.title}}
+			  </div>
+		  </div>
+      <div class="col-12 col-md-3 mt-4 mt-md-auto text-warning">
+         <p>Post section:</p>
+         {{form.categories}}
+      </div>
+      <br>
+      <div class="col-12 mt-3 text-center">
+      <p class="text-warning">Post subject:</p>
+			<div class="row ms-2 me-2 ms-md-none me-md-none g-0">
+			 {{form.body}}
+			</div>
+    </div>
+    <br>
+			<div>
+ 			<button type="Submit" class="btn btn-primary mt-4 text-center btn-md blog_submit_btn">Post</button>
+			</div>
+      <br>
+      <!--carousel-->
+      <div class="row g-0">
+        <div class="col-12">
+          <div id="owl-1" class="owl-carousel owl-theme">]
+            <div class="item">
+              <img class="img-fluid" src="{% static 'blog_engine/2.png' %}" style="width:200px;">
+            </div>
+            <div class="item">
+              <img class="img-fluid" src="{% static 'blog_engine/3.jpg' %}" style="width:200px;">
+            </div>
+            <div class="item">
+              <img class="img-fluid" src="{% static 'blog_engine/4.jpg' %}" style="width:200px;">
+            </div>
+            <div class="item">
+              <img class="img-fluid" src="{% static 'blog_engine/5.jpg' %}" style="width:200px;">
+            </div>
+            <div class="item">
+              <img class="img-fluid" src="{% static 'blog_engine/5.jpg' %}" style="width:200px;">
+            </div>
+          </div>
+		  </div>
+		</div>
+  </div>
+                </form>
+
+
+
+	</div>
+
+	
+      </div>
+   <!--/Section 2-->
+ </div>
+  <!--===================================================================================-->
+  {% endblock content%}
+
+  {% block extra_scripts %}
+
+  {% endblock %}

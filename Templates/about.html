@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} About this repo {% endblock %}
+{% block css_imports %}
+{% endblock %}
+{% block content %}
+<div class="container-fluid g-0">
+    <div class="row g-0">
+        <div class="col-12 col-md-2 g-0" style="background-color:yellow;">
+            {% include 'includes/dashboard_sidebar.html' %}
+        </div>
+
+        <!--begin about-->
+        <div class="col-12 col-md-10 mt-5 mt-md-3 ps-5 text-center g-0">
+            
+            <!--intro-->
+            <h2>About this repo</h2>
+            <p>This repository includes the implementation of a blog front-end and back-end, developed by <b>Mohammed Ba'ashar.</b></p>
+            <hr>
+
+            <!--partners-->
+            <div class="text-start mt-5 mt-md-3 ps-5 g-0">
+                <h4>Highlights:</h4>
+                <p>Some links from my work online.</p>
+
+                <div class="text-center mt-5">
+
+                    <div id="owl-2" class="owl-carousel owl-theme">
+                        <div class="item text-center">
+                            <h4>My website</h4>
+                            <p>Byts N Bytes is where I shaped my work on the web.</p>
+                            <a href="https://www.bytsnbytes.com"><img class="img-fluid" src="{% static 'blog_engine/logo_prod_1.png' %}" style="width: 200px; display: inline-block !important;"></a>
+                        </div>
+
+                        <div class="item text-center"><h4>My Github account</h4>
+                            <p>I upload my open source projects as repositories here.</p>
+                            <a href="https://github.com/mabaashar"><img class="img-fluid" src="https://cdn-icons-png.flaticon.com/512/25/25231.png" style="width: 200px; display: inline-block !important;"></a>
+                        </div>
+
+                        <div class="item text-center"><h4>My blog</h4>
+                            <p>You're invited to join !</p>
+                            <a href="https://www.bytsnbytes.com/blog"><img class="img-fluid" src="{% static 'blog_engine/3.jpg' %}" style="width: 200px; display: inline-block !important;"></a>
+                        </div>
+
+                        <div class="item text-center"><h4>My portfolio</h4>
+                            <p>My previous projects and services.</p>
+                            <a href="https://www.bytsnbytes.com/portfolio"><img class="img-fluid" src="{% static 'blog_engine/e-commerce-6898102_1280.jpg' %}" style="width: 200px; display: inline-block !important;"></a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+        <!-- end about-->
+
+    </div>
+</div>
+
+{% endblock content %}
+
+{% block extra_scripts %}
+{% endblock extra_scripts %}

@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Blog categories {% endblock %}
+{% block css_imports %}
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid  g-0">
+    <div class="row g-0">
+        <div class="col-12 col-md-2 g-0" style="background: yellow;">
+            {% include 'includes/dashboard_sidebar.html' %}
+        </div>
+
+        <!--begin section-->
+        <div class="col-12 col-md-10 mt-5 mt-md-3 ps-5 text-center g-0">
+            
+            <!--intro-->
+            <h2>Blog posts in <b class="text-primary">{{category}}</b></h2>
+            <hr>
+
+            <!--posts-->
+            <div class="row">
+                {% for post in chosen_posts %}
+                    <div class="col-12 col-md-6 mb-md-5">
+                        <h3>{{post.title}}</h3>
+                        <p>Written by: <b class="text-warning">{{post.author}}</b></p>
+                        <a href="{% url 'blog_post' chosen_post=post.id %}"><img class="img-fluid" src="{{post.image.url}}" style="width:200px;"></a>
+                        <br>
+                        <small class="text-danger">{{post.created_on}}</small>
+                    </div>
+                {% endfor %}
+
+            </div>
+            <!--/posts-->
+
+        </div>
+        <!-- end section-->
+
+    </div>
+</div>
+
+{% endblock content %}
+
+
